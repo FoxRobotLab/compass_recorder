@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Compass Rec</string>
+    <string name="default_rate">10</string>
+    <string name="per_sec">per sec</string>
+    <string name="toggle_recording">toggle recording</string>
+    <string name="record">Record</string>
+    <string name="stop">Stop</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="correct">Correct</string>
+    <string name="done">Done</string>
+    <string name="compass_face">compass face</string>
+    <string name="_0">0°</string>
+    <string name="cell_num">cell num</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+</resources>

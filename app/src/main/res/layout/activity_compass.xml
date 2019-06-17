@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".Compass">
+
+
+    <TextView
+        android:id="@+id/txt_azimuth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/_0"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_compass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_azimuth"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="15dp"
+        android:contentDescription="@string/compass_face"
+        android:src="@drawable/img_compass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_azimuth" />
+
+    <ToggleButton
+        android:id="@+id/toggleRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="@string/toggle_recording"
+        android:onClick="toggleRec"
+        android:textOff="@string/record"
+        android:textOn="@string/stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/rateField"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/rateField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="128dp"
+        android:ems="10"
+        android:hint="@string/per_sec"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/toggleRec"
+        app:layout_constraintEnd_toStartOf="@+id/toggleCorrect"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:targetApi="o" />
+
+    <ToggleButton
+        android:id="@+id/toggleCorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="toggleCorrect"
+        android:text="@string/togglebutton"
+        android:textOff="@string/correct"
+        android:textOn="@string/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rateField" />
+
+    <EditText
+        android:id="@+id/cellField"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="@string/cell_num"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/rateField"
+        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="Autofill"
+        tools:text="0" />
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="149dp"
+        android:layout_height="102dp"
+        android:layout_marginBottom="27dp"
+        android:onClick="nextCell"
+        android:text="@string/next"
+        app:layout_constraintBottom_toTopOf="@+id/toggleRec"
+        app:layout_constraintEnd_toStartOf="@+id/prevBtn" />
+
+    <Button
+        android:id="@+id/prevBtn"
+        android:layout_width="125dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="prevCell"
+        android:text="@string/prev"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nextBtn"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
